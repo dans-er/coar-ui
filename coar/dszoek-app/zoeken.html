@@ -1,0 +1,25 @@
+<h2>Zoeken</h2>
+Met het linker formulier kan worden gezocht in de database. Dit zoeken gaat met de 
+<a href="https://dev.mysql.com/doc/refman/5.0/en/string-comparison-functions.html#operator_like" 
+target="_blank"><b>LIKE</b>-operator</a>.
+<br/>
+<b>%</b> (procentteken) en <b>_</b> (underscore)
+gelden als wildcards. Met <b>%</b> selecteer je 0 tot meerdere tekens, <b>_</b> staat
+voor precies &#233;&#233;n teken. Het zoeken is niet gevoelig voor hoofdletters.
+<h4>Enkele voorbeelden</h4>
+<ul>
+        <li><b>Title:</b> <i>%leiden%</i> zoek alle datasets met <i>Leiden</i> in de titel</li>
+        <li><b>Title:</b> <i>leiden%</i> zoek alle datasets waarvan de titel begint met <i>Leiden...</i>.</li>
+        <li><b>Publisher:</b> <i>b___</i> zoek alle datasets waarvan de naam van de publisher
+        bestaat uit 4 letters en begint met <i>b</i>.</li>
+</ul>
+Meerder velden worden geschakeld met de <b>AND</b>-operator:
+<ul>
+        <li><b>Title:</b> <i>%leiden%</i> en <b>Publischer:</b> <i>%baac%</i> Alle
+                datasets met Leiden in de titel van publisher BAAC.
+        </li>
+</ul>
+Als je niets invult, worden alle datasets in de database gevonden tot een maximum van 10.000 records.
+Een volgende set van 10.000 records kan worden bekeken door het <b>sectienr.</b> te verhogen.
+<br/>&nbsp;<br/>
+De actuele resultaatset is gevonden met onderstaande query.
