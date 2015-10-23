@@ -1,0 +1,74 @@
+<h2>Veldnamen</h2>
+
+In de tabellen die beginnen met <b>coor_x</b>, <b>coor_y</b> worden <i>spatial points</i>
+beschreven. In de tabel hierboven de spatial points gevonden in EASY metadata.
+(De coordinaten gevonden in pdf-bestanden staan op een aparte pagina, die opent
+als je op <i>coordinaten</i> in de menubalk klikt.)
+De tabellen op het rechter gedeelte bovenaan op deze pagina geven respectievelijk
+de <i>median</i> coordinaten uit EASY metadata en uit de geanalyseerde pdf_bestanden.
+Zie voor een verklaring van <i>median</i> coordinaten het onderdeel <b>Methode</b>
+verderop.
+<ul>
+        <li><b>coor_x, coor_y</b>  
+                De x en y coordinaten van een 
+                <a href="https://nl.wikipedia.org/wiki/Rijksdriehoeksco%C3%B6rdinaten" target="_blank">RD-punt</a>. 
+        </li>
+        <li><b>lat, lon</b>
+                De vertaling van RD x,y naar latitude, longitude in het 
+                <a href="https://en.wikipedia.org/wiki/World_Geodetic_System" taeget="_blank">WGS84-stelsel</a>
+                volgens een methode beschreven in 
+                <a href="http://home.solcon.nl/pvanmanen/Download/Transformatieformules.pdf" target="_blank">deze studie</a>.  
+        </li>
+        <li><b>google</b>
+                Link naar Google maps. De default instelling van Google voor
+                schaalgrootte geeft een kaart op straat-niveau.
+        </li>
+        <li><b>osm</b>
+                Link naar OpenStreetMap. De default schaalgrootte van OSM geeft
+                een kaart op gemeente-niveau. De gebruikte query geeft ook de 
+                gemeente-, provincie- en landnamen gevonden via OpenStreetMap Nominatim
+                en <a href="http://www.geonames.org/" target="_blank">GeoNames</a>.
+        </li>
+        <li><b>geo</b>
+                Link naar GeoNames 
+                <a href="http://www.geonames.org/export/web-services.html#findNearbyPostalCodes" target="_blank">findNearbyPostalCodes</a>
+                geeft een overzicht van naburige plaatsen, gemeeenten en -natuurlijk- postcodes in xml.
+        </li>
+        <li><b>dist.emd</b>
+                De afstand (in meters) van dit punt tot het centrale punt uit EASY metadata (emd) coordinaten.
+        </li>
+        <li><b>o.e</b>
+                Outlier ten opzichte van de <i>outlier discriminator</i> op grond van coordinaten uit
+                EASY metadata (indien voorradig). (Zie het onderdeel <b>Methode</b> verderop.)
+                Een punt dat ver buiten de <i>spreiding</i> van de andere punten ligt krijgt een
+                <img src='alarm.png' width='20'/>.
+        </li>
+        <li><b>dist.pdf</b>
+                De afstand (in meters) van dit punt tot het centrale punt van coordinaten gevonden in in pdf-bestanden.       
+        </li>
+        <li><b>o.p</b>
+                Outlier ten opzichte van de <i>outlier discriminator</i> op grond van coordinaten gevonden
+                in pdf-bestanden. Zelfde als <b>o.e</b> hierboven, maar dan met de gevonden coordinaten.
+        </li>
+        <li><b>out_disc</b>
+                De <i>outlier discriminator</i> in meters. Het kritische punt waarop de afstand tot het centrale punt
+                verdacht wordt. Er is een <i>outlier discriminator</i> gebaseerd op EASY metadata coordinaten
+                en eentje gebaseerd op coordinaten gevonden in pdf_bestanden. Voor het berekenen van de
+                <i>outlier discriminator</i> moeten minstens drie punten bekend zijn.
+        </li>
+        <li><b>dist.center.emd</b> <code>Belangrijk</code>  
+                De afstand tussen het centrale punt uit pdf-bestanden en het centrale punt uit EASY metadata coordinaten
+                (indien aanwezig) in meters. Samen met de spreiding van punten zoals die tot uitdrukking komt
+                in de <i>outlier discriminator</i>s geeft dit aan hoe waarschijnlijk het is dat het gevonden punt juist is.
+        </li>
+        <li><b>bijz.</b>
+                Op dit moment alleen gebruikt voor
+                <ul>
+                        <li><b>0</b>: geen bijzonderheden;</li>
+                        <li><b>1</b>: bij de registratie van het punt werden de x- en y-coordinaten omgedraaid (x > y).</li>
+                </ul>
+        </li>
+        <li><b>methode</b>
+                De methode (regular expression) waarmee het punt werd gevonden in de content van het pdf-bestand.
+        </li>
+</ul>

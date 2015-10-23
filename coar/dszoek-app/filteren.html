@@ -1,21 +1,21 @@
 <h2>Filteren</h2>
 De <a href="https://datatables.net/" target="_blank">dataTable</a> waarin het
-resultaat van een query getoond word, kan server-side gefilterd worden. Je kunt
+resultaat van een query getoond wordt, kan server-side gefilterd worden. Je kunt
 de algemene zoekbox (rechtsboven) gebruiken of filteren per veld met de boxen onder
 de tabel.
 <h4>Numerieke velden</h4>
-Zoeken in numerieke velden is in eerste instantie contra-intu&#239;tief: <b>0</b> (nul)
+Zoeken in numerieke velden is in eerste instantie contra-intu&#239;tief: <code>0</code> (nul)
 in het zoekveld geeft als resultaat alle velden met <i>0</i>, maar ook die met
-<i>10</i>, <i>20</i> enz. Met een <b>,</b> (komma) geef je aan dat je numeriek wilt zoeken.
-<b>0,0</b> geeft alleen velden met een nul. De komma kun je lezen als <i>van .. tot en met ..</i>.
-Filteren met <b>3,5</b> geeft alle velden met de getallen <i>3</i>, <i>4</i> of <i>5</i>.
+<i>10</i>, <i>20</i> enz. Met een '<code>,</code>' (komma) geef je aan dat je numeriek wilt zoeken.
+<code>0,0</code> geeft alleen velden met een nul. De komma kun je lezen als <i>van .. tot en met ..</i>.
+Filteren met <code>3,5</code> geeft alle velden met <i>3</i>, <i>4</i> of <i>5</i> als waarde.
 
 <h4>Filteren op aantal co&#246;rdinaten</h4>
 Als voorbeeld nemen we het filteren van de resultaatset op aantal co&#246;rdinaten.
 <ul>
-        <li><b>co_emd:</b> <i>0,0</i> alle datasets waarvan geen co&#246;rdinaten
+        <li><b>co_emd:</b> <code>0,0</code> alle datasets waarvan geen co&#246;rdinaten
         bekend zijn in EASY metadata.</li>
-        <li><b>co_emd:</b> <i>0,0</i> en <b>co_pdf:</b> <i>1,999</i>
+        <li><b>co_emd:</b> <code>0,0</code> en <b>co_pdf:</b> <code>1,999</code>
         alle datasets waarvan geen co&#246;rdinaten
         bekend zijn in EASY metadata, maar waarvan in de pdf's &#233;&#233;n of
         meerdere co&#246;rdinaten zijn gevonden.

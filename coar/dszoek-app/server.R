@@ -7,7 +7,7 @@ shinyServer(function(input, output) {
         
         paras <- function() {
                 str_trim(c(input$emd_title, input$emd_publisher, input$emd_rightsholder, 
-                           input$datasetId, input$emd_archis_onderzoeksmeldingsnr))
+                           input$datasetId, input$emd_archis_omnr))
         }
         
         # output the section.display

@@ -12,7 +12,7 @@ shinyUI(fluidPage(
                               textInput("emd_publisher", label = h5("Publisher")),
                               textInput("emd_rightsholder", label = h5("RightsHolder")),
                               textInput("datasetId", label = h5("dataset ID")),
-                              textInput("emd_archis_onderzoeksmeldingsnr", label = h5("ARCHIS onderzoeksmeldingsnr.")),
+                              textInput("emd_archis_omnr", label = h5("ARCHIS onderzoeksmeldingsnr.")),
                               
                               # maxresults is a property of coar.R
                               helpText(paste("Een query met meer dan", maxresults, 
@@ -36,7 +36,6 @@ shinyUI(fluidPage(
                           fluidRow(column(7, includeHTML("filteren.html"))),
                           
                           width = 10
-                )       
-        )
-        
+                )     
+        ), title="Zoek een dataset"      
 ))

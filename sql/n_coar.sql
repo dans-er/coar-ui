@@ -3,6 +3,12 @@ Script to normalize part of the coar database into the coar_n database.
 */
 USE coar_n;
 
+/*
+=========================================
+Some trick
+=========================================
+*/
+SET foreign_key_checks = 0;
 
 DROP TABLE if exists `tspatials`;
 DROP TABLE if exists `tfiles`;
@@ -192,8 +198,8 @@ INSERT INTO `tspatials`
 		FROM coar.profile
 		JOIN coar.tbl_spatial ON `parent_tikaprofile_id` = `tikaprofile_id`
 		WHERE coar.tbl_spatial.source = 'emd'
-		GROUP BY `datasetId`
-		ORDER BY `datasetId`;
+		GROUP BY `datasetId`, `coor_x`, `coor_y`
+		ORDER BY `datasetId`, `coor_x`, `coor_y`;
         
 INSERT INTO `tspatials`
 	(`parent_datasetId`, `parent_fedora_file_id`, `source`, `coor_x`, `coor_y`, `lat`, `lon`, `point_index`, `method`, `xy_exchanged`,
@@ -206,4 +212,12 @@ INSERT INTO `tspatials`
         ORDER BY `datasetId`, tbl_spatial.fedora_identifier, `point_index`;
         
 UPDATE `tspatials` SET `limit_north` = NULL, `limit_east` = NULL, `limit_south` = NULL, `limit_west` = NULL
-WHERE `limit_north` = 0 AND `limit_east` = 0 AND `limit_south` = 0 AND `limit_west` = 0
+WHERE `limit_north` = 0 AND `limit_east` = 0 AND `limit_south` = 0 AND `limit_west` = 0;
+
+
+/*
+=========================================
+Some trick
+=========================================
+*/
+SET foreign_key_checks = 1;
